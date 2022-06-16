@@ -250,20 +250,20 @@ class BackQthread(QThread):
                     if i >= 1:  # 如果大於第二輪
                         dm.KeyPress(40)
                     if i == 0:  # 第一輪先點一下測試
-                        dm.MoveTo(190, 141)
+                        dm.MoveTo(160, 141)
                         dm.LeftDoubleClick()
                     dm.SetWindowState(LineWindow, 1)
                     dm.SetWindowState(LineWindow, 8)
                     dm.SetWindowState(LineWindow, 7)
                     dm.SetWindowState(LineWindow, 12)
                     time.sleep(0.2)
-                    dm.MoveTo(423, 615)  # 點及輸入訊息
+                    dm.MoveTo(402, 648)  # 點及輸入訊息
                     dm.LeftDoubleClick()
                     dm.LeftDoubleClick()
                     dm.LeftDoubleClick()
                     dm.LeftDoubleClick()
 
-                    dm.MoveTo(409, 682)
+                    dm.MoveTo(383, 722)
                     dm.LeftDoubleClick()
                     dm.LeftDoubleClick()
                     dm.LeftDoubleClick()
@@ -284,7 +284,7 @@ class BackQthread(QThread):
                     dm.SetWindowState(LineWindow, 7)
                     dm.SetWindowState(LineWindow, 12)
                     time.sleep(0.5)
-                    dm.MoveTo(423, 615)  # 點及輸入訊息
+                    dm.MoveTo(402, 648)  # 點及輸入訊息
                     dm.LeftDoubleClick()
                     time.sleep(0.1)
                     dm.LeftDoubleClick()
@@ -300,7 +300,7 @@ class BackQthread(QThread):
                     dm.LeftDoubleClick()
                     time.sleep(0.1)
 
-                    dm.MoveTo(409, 682)
+                    dm.MoveTo(383, 722)
                     dm.LeftDoubleClick()
                     dm.LeftDoubleClick()
                     dm.LeftDoubleClick()
@@ -330,7 +330,7 @@ class BackQthread(QThread):
                 print("Edit路徑句柄:" + str(Line_Select_file_Edit))
                 # 發送文字
                 LineBinding = dm.UnBindWindow()
-                dm.SendString2(Line_Select_file_Edit, os.path.dirname(os.path.abspath(__file__)) + "\\" + "abdc.png")
+                dm.SendString2(Line_Select_file_Edit, os.getcwd() + "\\" + "abdc.png")
                 # 案開啟
                 time.sleep(0.5)
                 LineBinding = dm.BindWindow(Line_Select_file, "normal", "windows", "windows", 0)  # 按下enter
