@@ -17,6 +17,7 @@ try:
                                    'confirmation popup to appear.')
 
     alert = driver.switch_to.alert
+    print("alert警告內容:"+alert.text)
     alert.accept()
     print("確認繼續下注")
 except TimeoutException:
